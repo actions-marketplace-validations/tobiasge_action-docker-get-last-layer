@@ -1,0 +1,29 @@
+name: 'Get Docker Image Last Layer'
+description: 'Retrieves the SHA of the last layer of an image'
+author: 'Tobias Genannt'
+inputs:
+  image:
+    description: 'The Docker image name and tag, for example "moby/buildkit:buildx-stable-1"'
+    required: true
+    default: ''
+  registry_username:
+    description: 'Username for the registry'
+    required: false
+    default: ''
+  registry_password:
+    description: 'Password for the registry'
+    required: false
+    default: ''
+  registry_endpoint:
+    description: 'Endpoint of the registry. For example, `https://docker.pkg.github.com/v2/`'
+    required: false
+    default: ''
+outputs:
+  value:
+    description: 'The SHA of the last image layer; for example "sha256:9111421a798f8f3077c1c1e13ba4d36ed81ee7c29a766e98d9d7dee8ff5024c3".'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+branding:
+  icon: 'package'
+  color: 'blue'
