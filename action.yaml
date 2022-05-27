@@ -3,7 +3,7 @@ description: 'Retrieves the SHA of the last layer of an image'
 author: 'Tobias Genannt'
 inputs:
   image:
-    description: 'The Docker image name and tag, for example "moby/buildkit:buildx-stable-1"'
+    description: 'The Docker image name and tag, for example "netboxcommunity/netbox:latest"'
     required: true
     default: ''
   registry_username:
