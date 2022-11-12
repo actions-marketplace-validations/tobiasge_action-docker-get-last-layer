@@ -8,4 +8,4 @@ if [ "${INPUT_REGISTRY_PASSWORD}" != "" ]; then
 fi
 
 docker pull "${INPUT_IMAGE}"
-echo "::set-output name=value::$(docker inspect "${INPUT_IMAGE}" | jq -r '.[0].RootFS.Layers | last')"
+echo "value=$(docker inspect "${INPUT_IMAGE}" | jq -r '.[0].RootFS.Layers | last')" >> $GITHUB_OUTPUT
